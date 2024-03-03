@@ -17,6 +17,7 @@
     </title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" type="text/javascript" defer></script>
   </head>
   <body>
     <!-- Sign-up form start -->
@@ -48,14 +49,18 @@
           </li>
         </ul>
         <div class="newsletter-form-inputs">
-          <label>Email address</label>
+          <label id="newsletter-form-email-label">Email address</label>
           <input
             type="email"
             name=""
-            id="newsletter-form-input"
+            id="newsletter-form-email-input"
             placeholder="email@company.com"
           />
-          <input type="submit" value="Subscribe to monthly newsletter." />
+          <input
+            type="submit"
+            value="Subscribe to monthly newsletter"
+            id="newsletter-form-submit-input"
+          />
         </div>
       </div>
       <div class="newsletter-form-image-container">
@@ -66,15 +71,27 @@
         />
       </div>
     </form>
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-
-    <!--     Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message -->
-
-    <!-- Success message end -->
+    <!--- TODO: Success Message Box -->
+    <div class="success-message-box inactive-right">
+      <img
+        src="./assets/images/icon-success.svg"
+        alt="Success"
+        class="success-message-icon"
+      />
+      <div class="success-texts">
+        <h2 class="newsletter-form-title">Thanks for subscribing!</h2>
+        <p class="newsletter-form-description" id="success-message-description">
+          A confirmation email has been sent to
+          <strong>%email%</strong>. Please open it and click the button inside
+          to confirm your Subscription.
+        </p>
+      </div>
+      <input
+        type="submit"
+        value="Dismiss message"
+        id="newsletter-form-dismiss-input"
+        data-dismiss="true"
+      />
+    </div>
   </body>
 </html>
